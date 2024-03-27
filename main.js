@@ -13,6 +13,13 @@ const randomizer = function(max) {
     return Math.floor(Math.random() * max);
 };
 
+const shuffleArray = function(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 // Global Variables
 
 let counter = 0;
@@ -42,24 +49,19 @@ const fillArtWrapper = function(art) {
 }
 
 const fillArtistWrappers = function(artist) {
-    let randomOrder = [];
     let artists = [];
     artists.push(artist);
-    for (let i = 0; i < 2; i++) {
-        let n = randomizer(2);
-        if (!randomOrder.includes(n)) {
-            randomOrder.push(n);
-        }
-    };
-    for (let i = 0; i < 2; i++) {
+    while (artists.length < 3) {
         let j = randomizer(artistArray.length);
         if (!artists.includes(artistArray[j])) {
             artists.push(artistArray[j]);
         }
     };
-    let slot1 = artistSlots[0];
-    let slot2 = artistSlots[1];
-    let slot3 = artistSlots[2];
+    let randomOrder = [0,1,2];
+    shuffleArray(randomOrder);
+    let slot1 = artistSlots[randomOrder[0]];
+    let slot2 = artistSlots[randomOrder[1]];
+    let slot3 = artistSlots[randomOrder[2]];
     let artist1 = artists[0];
     let artist2 = artists[1];
     let artist3 = artists[2];
