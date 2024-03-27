@@ -217,7 +217,6 @@ button {
   height: 150px;
   border-radius: 0.9375rem;
   border: 3px solid var(--color-cream-100);
-  background-image: url(images/artists/Picasso.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
