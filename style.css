@@ -246,14 +246,21 @@ button {
   grid-template-rows: 1fr;
 }
 
+.quizFooterCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .resultMsg {
   display: flex;
   gap: .75rem;
   font-size: 1.5rem;
   justify-content: center;
+  display: none;
 }
 
-.quizFooter button {
+.footerButtonWrapper {
   justify-self: end;
 }
 
