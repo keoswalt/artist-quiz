@@ -100,11 +100,11 @@ const fillArtistWrappers = function(artist) {
 }
 
 const writeSuccessMsg = function(artist, art) {
-    successText.innerText = "That's right! " + artist.name + " painted " + art.title + " in " + art.year + "."
+    successText.innerText = "That's right! " + artist.name + ' painted "' + art.title + '" in ' + art.year + "."
 }
 
 const writeFailMsg = function(artist, art) {
-    failMsg.innerText = "Not quite... " + artist.name + " painted " + art.title + " in " + art.year + "."
+    failMsg.innerText = "Not quite... " + artist.name + ' painted "' + art.title + '" in ' + art.year + "."
 }
 
 const makeGuess = function(event) {

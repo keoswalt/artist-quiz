@@ -189,6 +189,8 @@ button {
 }
 
 .pageScore {
+  display: flex;
+  align-items: center;
   color: var(--color-cream-100);
   font-size: 1.5rem;
   font-style: normal;
@@ -220,21 +222,25 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  transition: all 50ms ease;
 }
 
 .cardGuess {
   border: 5px solid var(--color-yellow-100);
   box-shadow: 0px 0px 20px 0px var(--color-cream-100, #FFF4E6);
+  transition: all 50ms ease;
 }
 
 .cardRight {
   border: 5px solid var(--color-green-100);
   box-shadow: 0px 0px 20px 0px var(--color-cream-100, #FFF4E6);
+  transition: all 50ms ease;
 }
 
 .cardWrong {
   border: 5px solid var(--color-red-100);
   box-shadow: 0px 0px 20px 0px var(--color-cream-100, #FFF4E6);
+  transition: all 50ms ease;
 }
 
 .quizFooter {
@@ -274,7 +280,9 @@ button {
 }
 
 .footerButtonWrapper {
-  justify-self: end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   display: none;
 }
 
