@@ -27,16 +27,12 @@ const artArray = [];
 
 class Art {
   constructor(title, year, artist, id, src) {
-    this._title = title;
-    this._year = year;
+    this.title = title;
+    this.year = year;
     this.artist = artist;
     this.src = src;
     this.id = id;
     artArray.push(this);
-  }
-
-  get year() {
-    return this._year;
   }
 }
 

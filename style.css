@@ -201,7 +201,7 @@ button {
   height: 20rem;
   border-radius: 1.25rem;
   border: 5px solid var(--color-cream-100, #FFF4E6);
-  background-image: url(images/artwork/Georgia2.png);
+  background-image: url(images/artists/Georgia.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -222,20 +222,19 @@ button {
   background-size: contain;
 }
 
-.artistSlot[data-selected="yes"] {
+.cardGuess {
+  border: 5px solid var(--color-yellow-100);
   box-shadow: 0px 0px 20px 0px var(--color-cream-100, #FFF4E6);
 }
 
-.artistSlot[data-status="guess"] {
-  border: 5px solid var(--color-yellow-100);
-}
-
-.artistSlot[data-status="correct"] {
+.cardRight {
   border: 5px solid var(--color-green-100);
+  box-shadow: 0px 0px 20px 0px var(--color-cream-100, #FFF4E6);
 }
 
-.artistSlot[data-status="wrong"] {
+.cardWrong {
   border: 5px solid var(--color-red-100);
+  box-shadow: 0px 0px 20px 0px var(--color-cream-100, #FFF4E6);
 }
 
 .quizFooter {
@@ -251,16 +250,32 @@ button {
   justify-content: center;
 }
 
+#checkAnswer {
+  display: none;
+}
+
 .resultMsg {
-  display: flex;
-  gap: .75rem;
-  font-size: 1.5rem;
+  display: none;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.successMsg {
+  display: none;
+  gap: .5rem;
+  justify-content: center;
+}
+
+.failureMsg {
   display: none;
 }
 
 .footerButtonWrapper {
   justify-self: end;
+  display: none;
 }
 
 
