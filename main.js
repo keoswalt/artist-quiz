@@ -14,7 +14,8 @@ const successText = document.getElementById("successText");
 const failMsg = document.querySelector(".failureMsg");
 
 const checkAnsButton = document.getElementById("checkAnswer");
-const nextQuestionButton = document.querySelector(".footerButtonWrapper");
+const nextQuestionButton = document.getElementById("nextQuestionButton");
+const seeScoreButton = document.getElementById("scoreButton");
 
 // Helpers
 
@@ -37,10 +38,10 @@ const removeClass = function(element, oldClass) {
     element.classList.remove(oldClass);
 }
 
-const removeIds = function(array) {
-    array.forEach(element => {
-        element.removeAttribute('id');
-    });
+const removeIds = function (array) {
+    for (let i = 0; i < array.length; i++) {
+        array[i].removeAttribute('id');
+    }
 }
 
 // Global Variables
@@ -128,16 +129,53 @@ const checkAnswer = function(guessId, correctId) {
         addClass(selectedCard, "cardWrong");
     };
     checkAnsButton.style.display = "none";
-    nextQuestionButton.style.display = "flex";
 }
+
+const advanceQuiz = function() {
+    nextQuestionButton.style.display = "none";
+    resultMsg.style.display = "none";
+    successMsg.style.display = "none";
+    failMsg.style.display = "none";
+    counter = counter + 1;
+    removeIds(artistSlots);
+    for (let i = 0; i < artistSlots.length; i++) {
+        removeClass(artistSlots[i], "cardGuess");
+        removeClass(artistSlots[i], "cardRight");
+        removeClass(artistSlots[i], "cardWrong");
+    };
+    quiz();
+}
+
+const checkAnsHandler = function(guess, correct) {
+    return function() {
+        checkAnswer(guess, correct);
+        console.log(guess, correct);
+        for (let i = 0; i < artistSlots.length; i++) {
+            if (artistSlots[i].getAttribute("id") === correct) {
+                addClass(artistSlots[i], "cardRight");
+                console.log(artistSlots[i]);
+            };
+        };
+        if (counter === numQuestions) {
+            seeScoreButton.style.display = "flex";
+            seeScoreButton.addEventListener("click", function turnOnScore() {
+                window.open("/end.html");
+                finalScore.innerText = score + "/10";
+            });
+        } else if (counter < numQuestions) {
+            nextQuestionButton.style.display = "flex";
+            nextQuestionButton.addEventListener("click", function turnOnNext() {
+                advanceQuiz();
+            });
+        };
+        checkAnsButton.removeEventListener("click", checkAnsHandler);
+    };
+};
 
 // Quiz
 
 const quiz = function() {
     const art = createArray(); // This creates a random array of 10 art objects from the main artArray
-
-    // Round function: check if counter < numQuestions
-
     currentArt = art[counter]; // This selects each piece of art in the new array in order every turn
     currentArtist = currentArt.artist; // This identifies the artwork's matching artist object from the artistArray
     let currentArtistId = currentArtist.id;
@@ -146,31 +184,18 @@ const quiz = function() {
     writeSuccessMsg(currentArtist, currentArt);
     writeFailMsg(currentArtist, currentArt);
 
+    // Adds event listener to record which card the user guesses
+
     for(let i = 0; i < artistSlots.length; i++) {
         artistSlots[i].addEventListener("click", makeGuess);
+    };
+
+    // Adds event listener to check score button to see if it was correct
+
+    checkAnsButton.addEventListener("click", checkAnsHandler(selectedCardId, currentArtistId));
+    console.log(counter);
+
+    // Check the round number and show either the see score button or next question button
     }
-
-    checkAnsButton.addEventListener("click", function() {
-        checkAnswer(selectedCardId, currentArtistId);
-        for (let i = 0; i < artistSlots.length; i++) {
-            if (artistSlots[i].getAttribute("id") === currentArtistId) {
-                addClass(artistSlots[i], "cardRight");
-            }
-        }
-    });
-
-    // Add event listener for next question button
-        // Hide next question button
-        // counter = counter + 1;
-        // runs "round" function again
-        // runs removeIds(artistSlots)
-        // remove class from artist cards
-
-    // else if counter is = numQuestions, return score, show see score button
-}
-
-// Add event listener for see score button
-    // window.open("/end.html")// Redirects to score page
-    // finalScore.innerText = score + "/10" // Writes score to innertext of element on page
 
 quiz();
