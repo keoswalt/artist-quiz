@@ -45,9 +45,9 @@ class Painting extends Art {
 
 // Adding Artists
 
-const picasso = new Artist("Pablo Picasso", "/images/artists/Picasso.png", "picasso");
-const georgia = new Artist("Georgia O'Keefe", "/images/artists/Georgia.png", "georgia");
-const matisse = new Artist("Henri Matisse", "/images/artists/Matisse.png", "matisse");
+const picasso = new Artist("Pablo Picasso", "images/artists/Picasso.png", "picasso");
+const georgia = new Artist("Georgia O'Keefe", "images/artists/Georgia.png", "georgia");
+const matisse = new Artist("Henri Matisse", "images/artists/Matisse.png", "matisse");
 
 // Adding Art
 
