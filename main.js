@@ -56,6 +56,8 @@ let selectedCardId;
 
 // Quiz Functions
 
+// Select artwork for array
+
 const createArray = function() {
     const currentArray = [];
     const addArt = function() {
@@ -71,9 +73,13 @@ const createArray = function() {
     return currentArray;
 }
 
+// Fill art wrapper with image
+
 const fillArtWrapper = function(art) {
     artWrapper.style.backgroundImage = "url(" + art.src + ")"
 }
+
+// Fill artist wrappers with images
 
 const fillArtistWrappers = function(artist) {
     let artists = [];
@@ -100,6 +106,8 @@ const fillArtistWrappers = function(artist) {
     slot3.setAttribute('id', artist3.id);
 }
 
+// Write success and fail messages
+
 const writeSuccessMsg = function(artist, art) {
     successText.innerText = "That's right! " + artist.name + ' painted "' + art.title + '" in ' + art.year + "."
 }
@@ -107,6 +115,8 @@ const writeSuccessMsg = function(artist, art) {
 const writeFailMsg = function(artist, art) {
     failMsg.innerText = "Not quite... " + artist.name + ' painted "' + art.title + '" in ' + art.year + "."
 }
+
+// Guess a card
 
 const makeGuess = function(event) {
     selectedCard = event.target;
@@ -117,6 +127,8 @@ const makeGuess = function(event) {
     };
     checkAnsButton.style.display = "flex";
 }
+
+// Check answer
 
 const checkAnswer = function(guessId, correctId) {
     resultMsg.style.display = "flex";
@@ -130,6 +142,8 @@ const checkAnswer = function(guessId, correctId) {
     };
     checkAnsButton.style.display = "none";
 }
+
+// Progress to next question
 
 const advanceQuiz = function() {
     nextQuestionButton.style.display = "none";
@@ -145,6 +159,8 @@ const advanceQuiz = function() {
     };
     quiz();
 }
+
+// Next questuion or see score handler
 
 const checkAnsHandler = function(guess, correct) {
     return function() {
@@ -172,7 +188,7 @@ const checkAnsHandler = function(guess, correct) {
     };
 };
 
-// Quiz
+// Master quiz function
 
 const quiz = function() {
     const art = createArray(); // This creates a random array of 10 art objects from the main artArray

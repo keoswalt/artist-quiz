@@ -56,7 +56,7 @@ const guernica = new Art(
   1937,
   picasso,
   "guernica",
-  "/images/artwork/picasso/guernica.jpg",
+  "./images/artwork/picasso/guernica.jpg",
 );
 
 const oldGuitarist = new Art(
@@ -64,7 +64,7 @@ const oldGuitarist = new Art(
     1904,
     picasso,
     "oldguitarist",
-    "/images/artwork/picasso/oldguitarist.jpg"
+    "./images/artwork/picasso/oldguitarist.jpg"
   );
 
   const lesDemoisellesDAvignon = new Art(
@@ -72,7 +72,7 @@ const oldGuitarist = new Art(
     1907,
     picasso,
     "lesdemoisellesdavignon",
-    "/images/artwork/picasso/lesdamoisellesdavignon.jpg"
+    "./images/artwork/picasso/lesdamoisellesdavignon.jpg"
   );
 
   const redCanna = new Art(
@@ -80,7 +80,7 @@ const oldGuitarist = new Art(
     1915,
     georgia,
     "redcanna",
-    "/images/artwork/georgia/redcanna.jpg"
+    "./images/artwork/georgia/redcanna.jpg"
   );
 
   const orientalPoppies = new Art(
@@ -88,7 +88,7 @@ const oldGuitarist = new Art(
     1927,
     georgia,
     "orientalpoppies",
-    "/images/artwork/georgia/orientalpoppies.jpg"
+    "./images/artwork/georgia/orientalpoppies.jpg"
   );
 
   const musicPinkAndBlueNo2 = new Art(
@@ -96,7 +96,7 @@ const oldGuitarist = new Art(
     1918,
     georgia,
     "musicpinkandblueno2",
-    "/images/artwork/georgia/musicpinkandblueno2.jpeg"
+    "./images/artwork/georgia/musicpinkandblueno2.jpeg"
   );
 
   const lakeGeorge = new Art(
@@ -104,7 +104,7 @@ const oldGuitarist = new Art(
     1922,
     georgia,
     "lakegeorge",
-    "/images/artwork/georgia/lakegeorge.png"
+    "./images/artwork/georgia/lakegeorge.png"
   );
 
   const theDance = new Art(
@@ -112,7 +112,7 @@ const oldGuitarist = new Art(
     1910,
     matisse,
     "thedance",
-    "/images/artwork/matisse/thedance.jpg"
+    "./images/artwork/matisse/thedance.jpg"
   );
 
   const theRedStudio = new Art(
@@ -120,7 +120,7 @@ const oldGuitarist = new Art(
     1911,
     matisse,
     "theredstudio",
-    "/images/artwork/matisse/redstudio.jpg"
+    "./images/artwork/matisse/redstudio.jpg"
   );
 
   const portraitOfMadameMatisse = new Art(
@@ -128,7 +128,7 @@ const oldGuitarist = new Art(
     1905,
     matisse,
     "portraitofmadamematisse",
-    "/images/artwork/matisse/portraitofmadamematisse.jpg"
+    "./images/artwork/matisse/portraitofmadamematisse.jpg"
   );
 
   const harmonyInRed = new Art(
@@ -136,7 +136,7 @@ const oldGuitarist = new Art(
     1908,
     matisse,
     "harmonyinred",
-    "/images/artwork/matisse/harmonyinred.jpg"
+    "./images/artwork/matisse/harmonyinred.jpg"
   );
 
 // Exporting Data
