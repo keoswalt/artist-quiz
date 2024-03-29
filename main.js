@@ -119,13 +119,14 @@ const writeFailMsg = function(artist, art) {
 // Guess a card
 
 const makeGuess = function(event) {
+    for (let i = 0; i < artistSlots.length; i++) {
+        removeClass(artistSlots[i], "cardGuess");
+    }
     selectedCard = event.target;
     selectedCardId = selectedCard.getAttribute('id');
     addClass(selectedCard, "cardGuess");
-    for (let i = 0; i < artistSlots.length; i++) {
-        artistSlots[i].removeEventListener("click", makeGuess);
-    };
     checkAnsButton.style.display = "flex";
+    console.log(selectedCard);
 }
 
 // Check answer
@@ -160,7 +161,7 @@ const advanceQuiz = function() {
     quiz();
 }
 
-// Next questuion or see score handler
+// Next question or see score handler
 
 const checkAnsHandler = function(guess, correct) {
     return function() {
@@ -184,7 +185,6 @@ const checkAnsHandler = function(guess, correct) {
                 advanceQuiz();
             });
         };
-        checkAnsButton.removeEventListener("click", checkAnsHandler);
     };
 };
 
