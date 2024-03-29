@@ -125,6 +125,10 @@ button {
   line-height: 100%;
 }
 
+button a {
+  all: unset;
+}
+
 /* Homepage */
 
 .homepageHero {
