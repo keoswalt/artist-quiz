@@ -149,7 +149,7 @@ button a {
   width: 100%;
   height: 100%;
   padding: 10rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -192,7 +192,7 @@ button a {
   line-height: 100%;
 }
 
-.pageScore {
+.questionCounter {
   display: flex;
   align-items: center;
   color: var(--color-cream-100);

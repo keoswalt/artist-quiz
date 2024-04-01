@@ -6,7 +6,11 @@ import { artistArray, artArray } from "./data.js";
 
 const artWrapper = document.querySelector(".artWrapper");
 const artistSlots = document.getElementsByClassName("artistSlot"); // returns array of three empty divs
+const scoreWrapper = document.querySelector(".scoreWrapper");
+const quizContentWrapper = document.querySelector(".quizContentWrapper");
 const finalScore = document.getElementById("finalScore");
+const scoreMessage = document.getElementById("scoreMessage");
+const questionCounter = document.querySelector(".questionCounter");
 
 const resultMsg = document.querySelector(".resultMsg");
 const successMsg = document.querySelector(".successMsg");
@@ -19,7 +23,7 @@ const seeScoreButton = document.getElementById("scoreButton");
 
 // Global Variables
 
-let counter = 0;
+let counter = 1;
 let score = 0;
 const numQuestions = 10;
 let currentArt;
@@ -68,7 +72,7 @@ const createArray = function() {
             currentArray.push(newArt);
         }
     };
-    while (currentArray.length < numQuestions) {
+    while (currentArray.length < (numQuestions)) {
         addArt();
     };
     return currentArray;
@@ -121,6 +125,18 @@ const writeFailMsg = function(artist, art) {
     failMsg.innerText = "Not quite... " + artist.name + ' painted "' + art.title + '" in ' + art.year + "."
 }
 
+const writeScoreMessage = function() {
+    if (score === 10) {
+        scoreMessage.innerText = "Amazing! You clearly know your artists."
+    } else if (score < 10 & score >= 8) {
+        scoreMessage.innerText = "Not bad! Next time go for 10/10."
+    } else if (score < 8 & score >= 5) {
+        scoreMessage.innerText = "So close! Want to try again?"
+    } else {
+        scoreMessage.innerText = "Bummer. Better luck next time!"
+    };
+}
+
 // Guess a card
 
 const makeGuess = function(event) {
@@ -153,8 +169,10 @@ const checkAnswer = function(guessId, correctId) {
 const showScore = function() {
     seeScoreButton.style.display = "flex";
     seeScoreButton.addEventListener("click", function turnOnScore() {
-        window.open("/end.html");
         finalScore.innerText = score + "/10";
+        writeScoreMessage();
+        quizContentWrapper.style.display = "none";
+        scoreWrapper.style.display = "flex";
     });
 }
 
@@ -180,7 +198,8 @@ const showNextQuestion = function(art) {
 // Quiz Round
 
 const quizRound = function (art) {
-    currentArt = art[counter];
+    questionCounter.innerText = counter + "/10";
+    currentArt = art[counter - 1];
     console.log(art);
     currentArtist = currentArt.artist;
     currentArtistId = currentArtist.id;
@@ -205,7 +224,7 @@ const quizRound = function (art) {
       }
       counter = counter + 1;
       console.log(counter);
-      if (counter === numQuestions -1) {
+      if (counter === (numQuestions + 1)) {
         showScore();
       } else {
         showNextQuestion(art);
