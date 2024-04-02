@@ -180,14 +180,14 @@ button a {
 .question {
   color: var(--color-cream-100, #FFF4E6);
   font-family: var(--ff-accent);
-  font-size: 4rem;
+  font-size: 3rem;
   font-style: normal;
   line-height: 100%;
 }
 
 .questionSubtitle {
   color: var(--color-cream-100, #FFF4E6);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-style: normal;
   line-height: 100%;
 }
@@ -196,14 +196,14 @@ button a {
   display: flex;
   align-items: center;
   color: var(--color-cream-100);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
 .artWrapper {
-  min-width: 20rem;
+  min-width: 25rem;
   height: 20rem;
   border-radius: 1.25rem;
   border: 5px solid var(--color-cream-100, #FFF4E6);
@@ -270,7 +270,7 @@ button a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .successMsg {
