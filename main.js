@@ -195,7 +195,7 @@ const showNextQuestion = function(art) {
 }, { once: true });
 }
 
-// Quiz Round
+// Quiz ************************************************************************************
 
 const quizRound = function (art) {
     questionCounter.innerText = counter + "/10";
@@ -234,7 +234,7 @@ const quizRound = function (art) {
 
   // Master quiz function
 
-  const quiz = function(art) {
+const quiz = function(art) {
     quizRound(art);
   }
 
