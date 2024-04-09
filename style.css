@@ -204,7 +204,7 @@ button a {
 @media (max-width: 50em) {
   .quizContentWrapper {
     padding: 1rem;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
