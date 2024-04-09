@@ -105,8 +105,17 @@
   font-size: 2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 140%;
-  /* 2.8rem */
+  line-height: 120%;
+}
+
+@media (max-width: 50em) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .pageSubtitle {
+    font-size: 1.25rem;
+  }
 }
 
 /* Buttons */
@@ -123,6 +132,15 @@ button {
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
+  text-align: center;
+}
+
+@media (max-width: 50em) {
+  button {
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 1rem;
+  }
 }
 
 button a {
@@ -143,6 +161,13 @@ button a {
   flex-shrink: 0;
 }
 
+@media (max-width: 50em) {
+  .homepageHero {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+}
+
 /* End Page */
 
 .scoreWrapper {
@@ -154,7 +179,13 @@ button a {
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  flex-shrink: 0;
+}
+
+@media (max-width: 50em) {
+  .scoreWrapper {
+    padding: 1rem;
+    gap: 2rem;
+  }
 }
 
 /* Quiz Page */
@@ -170,11 +201,24 @@ button a {
   gap: 3rem;
 }
 
+@media (max-width: 50em) {
+  .quizContentWrapper {
+    padding: 1rem;
+    gap: 2rem;
+  }
+}
+
 .quizQuestion {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+@media (max-width: 50em) {
+  .quizQuestion {
+    gap: .75rem;
+  }
 }
 
 .question {
@@ -183,13 +227,25 @@ button a {
   font-size: 3rem;
   font-style: normal;
   line-height: 100%;
+  text-align: center;
 }
 
 .questionSubtitle {
   color: var(--color-cream-100, #FFF4E6);
   font-size: 1.25rem;
   font-style: normal;
-  line-height: 100%;
+  line-height: 110%;
+  text-align: center;
+}
+
+@media (max-width: 50em) {
+  .question {
+    font-size: 2rem;
+  }
+
+  .questionSubtitle {
+    font-size: 1.2rem;
+  }
 }
 
 .questionCounter {
@@ -200,6 +256,12 @@ button a {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+@media (max-width:50em) {
+  .questionCounter {
+    font-size: 1rem;
+  }
 }
 
 .artWrapper {
@@ -213,9 +275,18 @@ button a {
   background-size: cover;
 }
 
+@media (max-width: 50em) {
+  .artWrapper {
+    min-width: unset;
+    width: 100%;
+    height: 15rem;
+  }
+}
+
 .artistsWrapper {
   display: flex;
   gap: 2rem;
+  justify-content: center;
 }
 
 .artistSlot {
@@ -227,6 +298,19 @@ button a {
   background-position: center;
   background-size: contain;
   transition: all 50ms ease;
+}
+
+@media (max-width: 50em) {
+  .artistsWrapper {
+    gap: .5rem;
+    width: 100%;
+  }
+
+  .artistSlot {
+    min-width: 100px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .cardGuess {
@@ -250,14 +334,8 @@ button a {
 .quizFooter {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 50% 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-}
-
-.quizFooterCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #checkAnswer {
@@ -271,6 +349,7 @@ button a {
   align-items: center;
   text-align: center;
   font-size: 1.25rem;
+  line-height: 110%;
 }
 
 .successMsg {
@@ -281,6 +360,16 @@ button a {
 
 .failureMsg {
   display: none;
+}
+
+@media (max-width: 50em) {
+  .resultMsg {
+    font-size: 1rem;
+  }
+
+  .successMsg img {
+    display: none;
+  }
 }
 
 .footerButtonWrapper {
